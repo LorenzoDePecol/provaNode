@@ -17,6 +17,10 @@ apiServer.get("/nome", (req, res) =>{
     res.send("ciao, il nome del server è: " + nome);
 });
 
+apiServer.get("/mionome", (req, res)=>{
+    res.send("ciao, il nome del server è: "+ req.query.nome);
+});
+
 apiServer.get("/", function(req, res){
     res.send("sei in home");
 });
