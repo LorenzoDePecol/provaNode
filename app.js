@@ -9,9 +9,11 @@ apiServer.listen(port, hostname, () => {
     console.log("server running at http://%s:%d/", hostname, port);
 });
 
-apiServer.get("nome", (req, res) =>{
+apiServer.get("/nome", (req, res) =>{
     console.log("ho ricevuto un get su nome");
-    res.statusCode = 200;
-    res.setHeader("content-Type", "text/plain");
-    res.end("Ciao sono il server Node");
+    res.send("ciao, il nome del server è: NODEDEPECOL")
+});
+
+apiServer.get("/", function(req, res){
+    res.send("sei in home");
 });
