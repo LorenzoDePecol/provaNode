@@ -4,6 +4,7 @@ var apiServer = express();
 
 var hostname = "127.0.0.1";
 var port = 3000;
+var nome = "NODEDEPECOL";
 
 apiServer.listen(port, hostname, () => {
     console.log("server running at http://%s:%d/", hostname, port);
@@ -11,7 +12,7 @@ apiServer.listen(port, hostname, () => {
 
 apiServer.get("/nome", (req, res) =>{
     console.log("ho ricevuto un get su nome");
-    res.send("ciao, il nome del server è: NODEDEPECOL")
+    res.send("ciao, il nome del server è: " + nome);
 });
 
 apiServer.get("/", function(req, res){
